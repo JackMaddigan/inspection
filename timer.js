@@ -53,5 +53,6 @@ document.addEventListener("keydown", function (event) {
 });
 
 document.addEventListener("touchstart", function (event) {
+  twelveAudio.play();
   manageTimer();
 });
