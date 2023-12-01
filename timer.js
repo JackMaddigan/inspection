@@ -55,3 +55,7 @@ document.addEventListener("keydown", function (event) {
     manageTimer();
   }
 });
+
+document.addEventListener("touchstart", function (event) {
+  manageTimer();
+});
