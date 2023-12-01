@@ -2,8 +2,8 @@ var timerOn = false;
 var stopwatchInterval;
 var startTime;
 var seconds;
-const eightAudio = new Audio("audio/eight.mp3");
-const twelveAudio = new Audio("audio/twelve.mp3");
+const eightSec = new Audio("audio/eight.mp3");
+const twelveSec = new Audio("audio/twelve.mp3");
 
 function updateStopwatch() {
   seconds = Math.floor((Date.now() - startTime) / 1000);
@@ -21,12 +21,16 @@ function updateStopwatch() {
 
 function eight() {
   // Play the audio
-  eightAudio.play();
+  eightSec.volume = 1;
+  eightSec.play();
+  clearInterval(eightSecondsInt);
 }
 
 function twelve() {
   // Play the audio
-  twelveAudio.play();
+  twelveSec.volume = 1;
+  twelveSec.play();
+  clearInterval(twelveSecondsInt);
 }
 
 function manageTimer() {
@@ -34,18 +38,24 @@ function manageTimer() {
   if (timerOn) {
     // stop timer
     clearInterval(stopwatchInterval);
+    clearInterval(eightSecondsInt);
+    clearInterval(twelveSecondsInt);
     timerOn = false;
   } else {
     // start timer
     stopwatchInterval = setInterval(updateStopwatch, 100);
-    setTimeout(eight, 8000);
-    setTimeout(twelve, 12000);
+    eightSecondsInt = setInterval(eight, 8000);
+    twelveSecondsInt = setInterval(twelve, 12000);
     startTime = Date.now();
     timerOn = true;
   }
 }
 
 document.addEventListener("keydown", function (event) {
+  eightSec.volume = 0;
+  eightSec.play();
+  twelveSec.volume = 0;
+  twelveSec.play();
   if (event.key === " ") {
     // The space key was pressed
     manageTimer();
@@ -53,6 +63,9 @@ document.addEventListener("keydown", function (event) {
 });
 
 document.addEventListener("touchstart", function (event) {
-  twelveAudio.play();
+  eightSec.volume = 0;
+  eightSec.play();
+  twelveSec.volume = 0;
+  twelveSec.play();
   manageTimer();
 });
