@@ -52,10 +52,10 @@ function manageTimer() {
 }
 
 document.addEventListener("keydown", function (event) {
-  eightSec.volume = 0;
-  eightSec.play();
-  twelveSec.volume = 0;
-  twelveSec.play();
+  // eightSec.volume = 0;
+  // eightSec.play();
+  // twelveSec.volume = 0;
+  // twelveSec.play();
   if (event.key === " ") {
     // The space key was pressed
     manageTimer();
@@ -63,9 +63,9 @@ document.addEventListener("keydown", function (event) {
 });
 
 document.addEventListener("touchstart", function (event) {
-  eightSec.volume = 0;
-  eightSec.play();
-  twelveSec.volume = 0;
-  twelveSec.play();
+  // eightSec.volume = 0;
+  // eightSec.play();
+  // twelveSec.volume = 0;
+  // twelveSec.play();
   manageTimer();
 });
