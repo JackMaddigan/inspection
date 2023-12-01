@@ -2,6 +2,8 @@ var timerOn = false;
 var stopwatchInterval;
 var startTime;
 var seconds;
+const eightAudio = new Audio("audio/eight.mp3");
+const twelveAudio = new Audio("audio/twelve.mp3");
 
 function updateStopwatch() {
   seconds = Math.floor((Date.now() - startTime) / 1000);
@@ -18,15 +20,13 @@ function updateStopwatch() {
 }
 
 function eight() {
-  const audio = new Audio("audio/eight.mp3");
   // Play the audio
-  audio.play();
+  eightAudio.play();
 }
 
 function twelve() {
-  const audio = new Audio("audio/twelve.mp3");
   // Play the audio
-  audio.play();
+  twelveAudio.play();
 }
 
 function manageTimer() {
