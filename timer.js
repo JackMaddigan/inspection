@@ -21,14 +21,12 @@ function eight() {
   const audio = new Audio("audio/eight.mp3");
   // Play the audio
   audio.play();
-  clearInterval(eightSecondsInt);
 }
 
 function twelve() {
   const audio = new Audio("audio/twelve.mp3");
   // Play the audio
   audio.play();
-  clearInterval(twelveSecondsInt);
 }
 
 function manageTimer() {
@@ -36,14 +34,12 @@ function manageTimer() {
   if (timerOn) {
     // stop timer
     clearInterval(stopwatchInterval);
-    clearInterval(eightSecondsInt);
-    clearInterval(twelveSecondsInt);
     timerOn = false;
   } else {
     // start timer
     stopwatchInterval = setInterval(updateStopwatch, 100);
-    eightSecondsInt = setInterval(eight, 8000);
-    twelveSecondsInt = setInterval(twelve, 12000);
+    setTimeout(eight, 8000);
+    setTimeout(twelve, 12000);
     startTime = Date.now();
     timerOn = true;
   }
