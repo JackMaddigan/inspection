@@ -1,0 +1,9 @@
+h1{
+    font-family: 'consolas', monospace;
+    font-size: 16em;
+    text-align: center;
+}
+
+body{
+    background-color: green;
+}
