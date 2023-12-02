@@ -29,7 +29,7 @@ function manageTimer() {
   } else {
     // start timer
     stopwatchInterval = setInterval(updateStopwatch, 100);
-    inspectionAudio.currentTime = 0;
+    inspectionAudio.currentTime = 0.5;
     inspectionAudio.play();
     startTime = Date.now();
     timerOn = true;
