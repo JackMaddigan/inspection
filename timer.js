@@ -30,8 +30,6 @@ function manageTimer() {
   } else {
     // start timer
     stopwatchInterval = setInterval(updateStopwatch, 100);
-    inspectionAudio.currentTime = 0;
-    inspectionAudio.play();
     startTime = Date.now();
     timerOn = true;
   }
@@ -41,6 +39,8 @@ document.addEventListener("keydown", function (event) {
   if (event.key === " ") {
     // The space key was pressed
     if (!isPlaying) {
+      inspectionAudio.currentTime = 0;
+      inspectionAudio.play();
       isPlaying = true;
     } else {
       inspectionAudio.pause();
@@ -52,6 +52,8 @@ document.addEventListener("keydown", function (event) {
 
 document.addEventListener("touchstart", function (event) {
   if (!isPlaying) {
+    inspectionAudio.currentTime = 0.5;
+    inspectionAudio.play();
     isPlaying = true;
   } else {
     inspectionAudio.pause();
