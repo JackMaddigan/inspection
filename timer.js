@@ -52,7 +52,7 @@ document.addEventListener("keydown", function (event) {
 document.addEventListener("touchstart", function (event) {
   manageTimer();
   if (!isPlaying) {
-    inspectionAudio.currentTime = 0;
+    inspectionAudio.currentTime = 0.9;
     inspectionAudio.play();
     isPlaying = true;
   } else {
