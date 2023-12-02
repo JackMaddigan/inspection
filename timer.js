@@ -38,24 +38,24 @@ function manageTimer() {
 }
 
 document.addEventListener("keydown", function (event) {
-  if (!isPlaying) {
-    isPlaying = true;
-  } else {
-    inspectionAudio.pause();
-    isPlaying = false;
-  }
   if (event.key === " ") {
     // The space key was pressed
+    if (!isPlaying) {
+      isPlaying = true;
+    } else {
+      inspectionAudio.pause();
+      isPlaying = false;
+    }
     manageTimer();
   }
 });
 
 document.addEventListener("touchstart", function (event) {
-  manageTimer();
   if (!isPlaying) {
     isPlaying = true;
   } else {
     inspectionAudio.pause();
     isPlaying = false;
   }
+  manageTimer();
 });
