@@ -29,6 +29,8 @@ function manageTimer() {
   } else {
     // start timer
     stopwatchInterval = setInterval(updateStopwatch, 100);
+    inspectionAudio.currentTime = 0;
+    inspectionAudio.play();
     startTime = Date.now();
     timerOn = true;
   }
@@ -36,8 +38,6 @@ function manageTimer() {
 
 document.addEventListener("keydown", function (event) {
   if (!isPlaying) {
-    inspectionAudio.currentTime = 0;
-    inspectionAudio.play();
     isPlaying = true;
   } else {
     inspectionAudio.pause();
@@ -52,8 +52,6 @@ document.addEventListener("keydown", function (event) {
 document.addEventListener("touchstart", function (event) {
   manageTimer();
   if (!isPlaying) {
-    inspectionAudio.currentTime = 0.9;
-    inspectionAudio.play();
     isPlaying = true;
   } else {
     inspectionAudio.pause();
