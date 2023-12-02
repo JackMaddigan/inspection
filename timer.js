@@ -50,6 +50,7 @@ document.addEventListener("keydown", function (event) {
 });
 
 document.addEventListener("touchstart", function (event) {
+  manageTimer();
   if (!isPlaying) {
     inspectionAudio.currentTime = 0;
     inspectionAudio.play();
@@ -58,6 +59,4 @@ document.addEventListener("touchstart", function (event) {
     inspectionAudio.pause();
     isPlaying = false;
   }
-
-  manageTimer();
 });
