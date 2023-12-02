@@ -4,6 +4,7 @@ var startTime;
 var seconds;
 var isPlaying = false;
 const inspectionAudio = new Audio("audio/inspection-audio.mp3");
+inspectionAudio.load();
 
 function updateStopwatch() {
   seconds = Math.floor((Date.now() - startTime) / 1000);
@@ -29,7 +30,7 @@ function manageTimer() {
   } else {
     // start timer
     stopwatchInterval = setInterval(updateStopwatch, 100);
-    inspectionAudio.currentTime = 0.5;
+    inspectionAudio.currentTime = 0;
     inspectionAudio.play();
     startTime = Date.now();
     timerOn = true;
